@@ -23,6 +23,20 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
+        .px-30
+        {
+            padding-left: 30px;
+        }
+
+        .cgray
+        {
+            color:#a4a4a4;
+        }
+
+        .f-large{
+            font-size: large;
+        }
     </style>
     <title>Cripstory</title>
 </head>
@@ -68,8 +82,8 @@
             <thead>
               <tr>
                   <th>#</th>
-                  <th>Name</th>
-                  <th>Price</th>
+                  <th class="px-30">Name</th>
+                  <th >Price</th>
               </tr>
             </thead>
     
@@ -116,9 +130,15 @@
 
                 //console.log(data.Data[coinRank].CoinInfo.FullName); 
                 cellNum.innerHTML = coinRank + 1;
-                cellName.innerHTML = "<div class=\"container\"><div class=\"row\"><div class=\"col\"><img class=\"materialboxed\" width=\"35\" src=\"https://www.cryptocompare.com/" + data.Data[coinRank].CoinInfo.ImageUrl + "\"/></div><div class=\"col\">"+ "<b><span class=\"gray-text text-darken-4\">"+data.Data[coinRank].CoinInfo.Name+"</span></b><br>"+ "<span>"+data.Data[coinRank].CoinInfo.FullName+"</span>"+"</div></div></div>";
+                
+                let logo = "<img class=\"materialboxed\" width=\"35\" src=\"https://www.cryptocompare.com/" + data.Data[coinRank].CoinInfo.ImageUrl + "\"/>";
+                let name = "<b><span class=\"cgray\">"+data.Data[coinRank].CoinInfo.Name+"</span></b><br>";
+                let fullName = "<span><b>"+data.Data[coinRank].CoinInfo.FullName+"</b></span>";
+                
+                cellName.innerHTML = "<div class=\"container\"><div class=\"row\"><div class=\"col\">" + logo + "</div><div class=\"col\">" + name +  fullName + "</div></div></div>";
+                
                 if(data.Data[coinRank].RAW){
-                    cellPrice.innerHTML = Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(3);
+                    cellPrice.innerHTML = "<span class=\"f-large\"><b>"+Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(3)+"</b></span>";
                 }else{
                     cellPrice.innerHTML = "No data available";
                 }
