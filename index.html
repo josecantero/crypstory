@@ -138,7 +138,7 @@
                 cellName.innerHTML = "<div class=\"container\"><div class=\"row\"><div class=\"col\">" + logo + "</div><div class=\"col\">" + name +  fullName + "</div></div></div>";
                 
                 if(data.Data[coinRank].RAW){
-                    cellPrice.innerHTML = "<span class=\"f-large\"><b>"+Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(3)+"</b></span>";
+                    cellPrice.innerHTML = "<span class=\"f-large\"><b>$ "+Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(3)+"</b></span>";
                 }else{
                     cellPrice.innerHTML = "No data available";
                 }
