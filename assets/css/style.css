@@ -1,0 +1,54 @@
+.textShadow5
+        {
+            text-shadow: #000 5px 5px 5px;
+        }
+        .textShadow2
+        {
+            text-shadow: #000 2px 2px 2px;
+        }
+        .padding
+        {
+            padding: 20px;
+        }
+
+        span{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .px-30
+        {
+            padding-left: 30px;
+        }
+
+        .cgray
+        {
+            color:#a4a4a4;
+        }
+
+        .f-large{
+            font-size: large;
+        }
+
+        h3
+        {
+            font-size: 2rem;
+            line-height: 110%;
+            margin: 1.9466666667rem 0 1.168rem 0;
+        }
+
+        .imageNesWall
+        {
+            background-color: rgba(0,0,0,0.8);
+            height: 500px;
+            max-width: 100%;
+            filter:brightness(0.4);
+        }
+
+        h5
+        {
+            font-size: 1.3rem;
+            line-height: 110%;
+            margin: 1.0933333333rem 0 .656rem 0;
+        }

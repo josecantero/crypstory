@@ -4,40 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/materialize/css/materialize.min.css">
-    <style>
-        .textShadow5
-        {
-            text-shadow: #000 5px 5px 5px;
-        }
-        .textShadow2
-        {
-            text-shadow: #000 2px 2px 2px;
-        }
-        .padding
-        {
-            padding: 20px;
-        }
-
-        span{
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .px-30
-        {
-            padding-left: 30px;
-        }
-
-        .cgray
-        {
-            color:#a4a4a4;
-        }
-
-        .f-large{
-            font-size: large;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Cripstory</title>
 </head>
 <body>
@@ -46,31 +13,31 @@
         <div class="slider ">
             <ul class="slides">
                 <li>
-                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <img id="img1" class="imageNesWall" src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
                     <div class="caption left-align">
-                    <h3 class="textShadow5">Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    <h3 id="title1" class="textShadow5">Left Aligned Caption</h3>
+                    <h5 id="desc1" class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
                     </div>
                 </li>
                 <li>
-                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <img id="img2" class="imageNesWall" src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
                     <div class="caption left-align">
-                    <h3 class="textShadow5">Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    <h3 id="title2" class="textShadow5">Left Aligned Caption</h3>
+                    <h5 id="desc2" class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
                     </div>
                 </li>
                 <li>
-                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <img id="img3" class="imageNesWall" src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
                     <div class="caption left-align">
-                    <h3 class="textShadow5">Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    <h3 id="title3" class="textShadow5">Left Aligned Caption</h3>
+                    <h5 id="desc3" class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
                     </div>
                 </li>
                 <li>
-                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <img id="img3" class="imageNesWall" src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
                     <div class="caption left-align">
-                    <h3 class="textShadow5">Left Aligned Caption</h3>
-                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    <h3 id="title4" class="textShadow5">Left Aligned Caption</h3>
+                    <h5 id="desc4" class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
                     </div>
                 </li>
             </ul>
@@ -94,6 +61,8 @@
     </div>
     
     <script src="assets/css/materialize/js/materialize.min.js"></script>
+    <script src="assets/js/coinNews.js"></script>
+    <script src="assets/js/coinlist.js"></script>
     <script>
           document.addEventListener('DOMContentLoaded', function() {
                 var elems = document.querySelectorAll('.slider');
@@ -101,7 +70,7 @@
             });  
     </script>
     
-    <script src="assets/js/coinlist.js"></script>
+    
     
 </body>
 </html>
