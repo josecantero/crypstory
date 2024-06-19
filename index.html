@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/materialize/css/materialize.min.css">
+    <style>
+        .textShadow5
+        {
+            text-shadow: #000 5px 5px 5px;
+        }
+        .textShadow2
+        {
+            text-shadow: #000 2px 2px 2px;
+        }
+        .padding
+        {
+            padding: 20px;
+        }
 
+        span{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+    <title>Cripstory</title>
+</head>
+<body>
+    <header>
+        
+        <div class="slider ">
+            <ul class="slides">
+                <li>
+                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <div class="caption left-align">
+                    <h3 class="textShadow5">Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <div class="caption left-align">
+                    <h3 class="textShadow5">Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <div class="caption left-align">
+                    <h3 class="textShadow5">Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg"> <!-- random image -->
+                    <div class="caption left-align">
+                    <h3 class="textShadow5">Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3 textShadow2">Here's our small slogan.</h5>
+                    </div>
+                </li>
+            </ul>
+        </div>
+      
+    </header>
+    <div class="container">
+        <table id="tcoins">
+            <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Price</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              
+            </tbody>
+          </table>
+    </div>
+    
+    <script src="assets/css/materialize/js/materialize.min.js"></script>
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.slider');
+                var instances = M.Slider.init(elems, null);
+            });  
+    </script>
+    
+    <script>
+        // Define the API URL
+        let coinIds = [];
+        let tcoins = document.getElementById('tcoins');
+
+        //console.log(tcoins);
+        const apiUrl = 'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=100&tsym=USD';
+
+        // Make a GET request
+        fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            for(coinRank = 0; coinRank <= 99; coinRank++){
+                //console.log(data.Data[coinRank].CoinInfo.FullName);
+                let row = tcoins.lastElementChild.insertRow(coinRank);
+                row.style.textAlign = "center";
+
+                let cellNum = row.insertCell(0);
+                let cellName = row.insertCell(1);
+                let cellPrice = row.insertCell(2);
+
+                //console.log(data.Data[coinRank].CoinInfo.FullName); 
+                cellNum.innerHTML = coinRank + 1;
+                cellName.innerHTML = "<div class=\"container\"><div class=\"row\"><div class=\"col\"><img class=\"materialboxed\" width=\"35\" src=\"https://www.cryptocompare.com/" + data.Data[coinRank].CoinInfo.ImageUrl + "\"/></div><div class=\"col\">"+ "<b><span class=\"gray-text text-darken-4\">"+data.Data[coinRank].CoinInfo.Name+"</span></b><br>"+ "<span>"+data.Data[coinRank].CoinInfo.FullName+"</span>"+"</div></div></div>";
+                if(data.Data[coinRank].RAW){
+                    cellPrice.innerHTML = Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(3);
+                }else{
+                    cellPrice.innerHTML = "No data available";
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+
+    </script>
+    
+</body>
+</html>
