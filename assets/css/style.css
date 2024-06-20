@@ -52,3 +52,12 @@
             line-height: 110%;
             margin: 1.0933333333rem 0 .656rem 0;
         }
+
+        .slider .slides li .caption {
+            color: #fff;
+            position: absolute;
+            top: 5%;
+            left: 8%;
+            width: 86%;
+            opacity: 0;
+          }
