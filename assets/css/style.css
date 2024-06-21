@@ -61,3 +61,29 @@
             width: 86%;
             opacity: 0;
           }
+
+          .center-items
+          {
+            display: flex;
+            align-items: center;
+          }
+
+          .px-5
+          {
+            padding-left: 5px;
+            padding-right: 5px;
+          }
+
+          .fw-bold
+          {
+            font-weight: bold;
+          }
+
+          .fs-xxlarge{
+            font-size: xx-large;
+          }
+
+          .text-black
+          {
+            color: black;
+          }
