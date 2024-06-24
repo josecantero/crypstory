@@ -1,5 +1,7 @@
 
-const apiNewsUrl = 'https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol=BTC';
+let params = new URLSearchParams(location.search);
+var contract = params.get('coin');
+const apiNewsUrl = 'https://data-api.cryptocompare.com/asset/v1/data/by/symbol?asset_symbol='+contract;
 
 let cryptoName = document.getElementById("crypto-name");
 let cryptoFullName = document.getElementById("crypto-full-name");
@@ -11,6 +13,7 @@ let whitepaper = document.getElementById("white-paper");
 let blog = document.getElementById("blog");
 let launchDate = document.getElementById("launch-date");
 let consensusMechanism = document.getElementById("consensus-mechanisms");
+
 
 // Make a GET request
 fetch(apiNewsUrl)
@@ -27,7 +30,12 @@ fetch(apiNewsUrl)
     cryptoLogo.setAttribute("src",data.Data.LOGO_URL);
     cryptoFullName.innerHTML = data.Data.NAME.charAt(0).toUpperCase() + data.Data.NAME.slice(1);
     cryptoName.innerHTML = data.Data.SYMBOL.toUpperCase();
-    cryptoPrice.innerHTML = "$"+Number(data.Data.PRICE_USD).toFixed(2);
+    if(Number(data.Data.PRICE_USD) >= 1){
+        cryptoPrice.innerHTML = "$"+Number(data.Data.PRICE_USD).toFixed(2);
+    }else{
+        cryptoPrice.innerHTML = "$"+Number(data.Data.PRICE_USD).toFixed(8);
+    }
+    
     pageTitle.innerHTML = data.Data.URI.toUpperCase();
     webSite.setAttribute("href", data.Data.WEBSITE_URL);
     whitepaper.setAttribute("href", data.Data.WHITE_PAPER_URL);
@@ -35,6 +43,8 @@ fetch(apiNewsUrl)
     let date = new Date(data.Data.LAUNCH_DATE * 1000).toLocaleDateString('en-US');
     launchDate.innerHTML = date;
     consensusMechanism.innerHTML = data.Data.CONSENSUS_MECHANISMS[0].NAME
+
+    console.log(contract);
 
 })
 .catch(error => {

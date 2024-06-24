@@ -11,6 +11,8 @@
         .wallpaper
         {
             background-image: url("assets/images/cryptodetailswallpaper.jpg");
+            background-color: rgba(0,0,0,0.8);
+            filter:brightness(0.4);
         }
     </style>
     
@@ -18,9 +20,12 @@
     <title> </title>
 </head>
 <body>
-    <div class="container-fluid wallpaper">
-        <div div="crypto-name-section" class="row">
+    <div class="container-fluid container-image ">
+        <img id="img1" class="imageDetailsWall" src="https://www.cointribune.com/app/uploads/2024/02/Ethereum-erc-404-nft-6.jpeg">
+        <div class="row px-14 py-14"><span ><a href="index.html" class="text-white">volver</a> </span></div>
+        <div id="crypto-name-section" class="row">
             <div class="col center-items">
+                
                 <img style="width: 2.5rem;" class="" id="crypto-logo" src=" " alt="">
                 <span id="crypto-full-name" class="text-white px-5 fw-bold"> </span>
                 <span id="crypto-name" class="text-white fw-bold"> </span>
@@ -42,16 +47,19 @@
                 <a id="blog" class="waves-effect btn-small grey lighten-4  text-black" href=" " target="_blank" rel="noopener noreferrer">Blog</a>
             </div>
         </div>
+    </div>
+    <div class="container" style="padding-top:65px;">
+       
         <div class="row">
             <div class="col">
-                <span id="launch-date-title" class="text-white fw-bold">Fecha de Lanzamiento: </span><span id="launch-date" class="text-white fw-bold"> </span>
+                <span id="launch-date-title" class="text-black fw-bold">Fecha de Lanzamiento: </span><span id="launch-date" class="text-black fw-bold"> </span>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <span id="consensus-mechanisms-title" class="text-white fw-bold">Mecanismo de Concenso: </span><span id="consensus-mechanisms" class="text-white fw-bold"> </span>
+                <span id="consensus-mechanisms-title" class="text-black fw-bold">Mecanismo de Concenso: </span><span id="consensus-mechanisms" class="text-black fw-bold"> </span>
             </div>
-        </div>
+        </div>        
     </div>
 
     <script src="assets/js/crypto-details.js"></script>

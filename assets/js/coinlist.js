@@ -25,14 +25,19 @@
                 //console.log(data.Data[coinRank].CoinInfo.FullName); 
                 cellNum.innerHTML = coinRank + 1;
                 
-                let logo = "<img class=\"materialboxed\" width=\"35\" src=\"https://www.cryptocompare.com/" + data.Data[coinRank].CoinInfo.ImageUrl + "\"/>";
+                let logo = "<a href=\"coindetails.html?coin="+data.Data[coinRank].CoinInfo.Name+"\">"+"<img class=\"materialboxed\" width=\"35\" src=\"https://www.cryptocompare.com/" + data.Data[coinRank].CoinInfo.ImageUrl + "\"/></a>";
                 let name = "<b><span class=\"cgray\">"+data.Data[coinRank].CoinInfo.Name+"</span></b><br>";
                 let fullName = "<span><b>"+data.Data[coinRank].CoinInfo.FullName+"</b></span>";
                 
                 cellName.innerHTML = "<div class=\"container\"><div class=\"row\"><div class=\"col\">" + logo + "</div><div class=\"col\">" + name +  fullName + "</div></div></div>";
                 
                 if(data.Data[coinRank].RAW){
-                    cellPrice.innerHTML = "<span class=\"f-large\"><b>$ "+Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(3)+"</b></span>";
+                    if(Number(data.Data[coinRank].RAW.USD.PRICE)>=1){
+                        cellPrice.innerHTML = "<span class=\"f-large\"><b>$ "+Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(3)+"</b></span>";
+                    }else{
+                        cellPrice.innerHTML = "<span class=\"f-large\"><b>$ "+Number(data.Data[coinRank].RAW.USD.PRICE).toFixed(8)+"</b></span>";
+                    }
+                    
                 }else{
                     cellPrice.innerHTML = "No data available";
                 }
