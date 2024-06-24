@@ -25,7 +25,7 @@
                 //console.log(data.Data[coinRank].CoinInfo.FullName); 
                 cellNum.innerHTML = coinRank + 1;
                 
-                let logo = "<a href=\"coindetails.html?coin="+data.Data[coinRank].CoinInfo.Name+"\">"+"<img class=\"materialboxed\" width=\"35\" src=\"https://www.cryptocompare.com/" + data.Data[coinRank].CoinInfo.ImageUrl + "\"/></a>";
+                let logo = "<a href=\"coinDetails.html?coin="+data.Data[coinRank].CoinInfo.Name+"\">"+"<img class=\"materialboxed\" width=\"35\" src=\"https://www.cryptocompare.com/" + data.Data[coinRank].CoinInfo.ImageUrl + "\"/></a>";
                 let name = "<b><span class=\"cgray\">"+data.Data[coinRank].CoinInfo.Name+"</span></b><br>";
                 let fullName = "<span><b>"+data.Data[coinRank].CoinInfo.FullName+"</b></span>";
                 
